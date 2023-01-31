@@ -97,7 +97,7 @@ const Purpose = () => {
                 <br />
                 <br />
                 <br />
-                <h1>Documents Required</h1>
+                <h1 className='fw-bolder'>Documents Required</h1>
                 <br />
                 <br />
                 <br />
@@ -154,9 +154,19 @@ const Purpose = () => {
                 <br />
                 <br />
                 <br />
+                <br />
+                <div>
+                    <h1 className='fw-bolder'>FAQ</h1>
+                    <br />
+                    <br />
+                    <br />
+                    <Container>
+                        <Row></Row>
+
+                    </Container>
+                </div>
             </div>
-            <br />
-            <br />
+
         </div>
     );
 };
