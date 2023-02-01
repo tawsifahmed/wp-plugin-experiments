@@ -2,6 +2,8 @@ import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import './Purpose.css'
 import document from '../../../assets/icons8-document.svg'
+import arrow from '../../../assets/icons8-downgreen.svg'
+import downloadlogo from '../../../assets/icons8-downloading-updates.svg'
 
 const Purpose = () => {
     return (
@@ -161,9 +163,78 @@ const Purpose = () => {
                     <br />
                     <br />
                     <Container>
-                        <Row></Row>
+                        <Row>
+                            <Col className='d-flex justify-content-between align-items-center rounded shadow p-4'>
+                                <div>
+                                    <h5 className='text-start'>Whats the tenure  of this loan?</h5>
+                                    <h6 className='text-start text-secondary'>The loan tenure is a maximum of 6 years</h6>
+                                </div>
+                                <div>
+                                    <img className='arrow-up' src={arrow} alt="" />
+                                </div>
+                            </Col>
+                        </Row>
+                        <br />
+                        <Row>
+                            <Col className='d-flex justify-content-between align-items-center rounded shadow p-4'>
+                                <div>
+                                    <h5 className='text-start'>Which vendors are available as part of IPDC?</h5>
 
+                                </div>
+                                <div>
+                                    <img src={arrow} alt="" />
+                                </div>
+                            </Col>
+                        </Row>
+                        <br />
+                        <Row>
+                            <Col className='d-flex justify-content-between align-items-center rounded shadow p-4'>
+                                <div>
+                                    <h5 className='text-start'>What is the maximum loan amount?</h5>
+
+                                </div>
+                                <div>
+                                    <img src={arrow} alt="" />
+                                </div>
+                            </Col>
+                        </Row>
+                        <br />
+                        <Row>
+                            <Col className='d-flex justify-content-between align-items-center rounded shadow p-4'>
+                                <div>
+                                    <h5 className='text-start'>What are the criteria for applying for IPDC Auto Loan?</h5>
+
+                                </div>
+                                <div>
+                                    <img src={arrow} alt="" />
+                                </div>
+                            </Col>
+                        </Row>
                     </Container>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <Container>
+                        <div className='d-flex justify-content-end'>
+                            <div className='hide'>
+                                p
+                            </div>
+                            <div className='d-flex align-items-center downbtn'>
+                                <p className='download-btn'>DOWNLOAD NOW</p>
+                                <img className='mb-3' src={downloadlogo} alt="" />
+                            </div>
+                        </div>
+                    </Container>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
                 </div>
             </div>
 
