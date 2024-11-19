@@ -33,20 +33,15 @@ if( class_exists( 'CSF' ) ) {
     // Set a unique slug-like ID
     $prefix = 'geo_store_locator_meta';
 
-    //
     // Create a metabox
     CSF::createMetabox( $prefix, [
         'title'     => 'Options',
         'post_type' => 'geo-store-map',
     ]);
 
-    //
     // Create a section
     CSF::createSection( $prefix, array(
         'fields' => [
-
-        //
-        // A text field
         [
             'id'    => 'map_type',
             'type'  => 'select',
@@ -56,6 +51,48 @@ if( class_exists( 'CSF' ) ) {
                 'openstreet_map' => 'OpenStreet Map',            
             ],
         ],
+        [
+            'ids' => 'maps',
+            'type' => 'group',
+            'title' => 'Maps',
+            'fields' => [
+                [
+                    'id' => 'title',
+                    'type' => 'text',
+                    'title' => 'Title',
+                ],
+                [
+                    'id' => 'latitude',
+                    'type' => 'text',
+                    'title' => 'Latitude',
+                ],
+                [
+                    'id' => 'longitude',
+                    'type' => 'text',
+                    'title' => 'Longitude',
+                ],
+                [
+                    'id' => 'address',
+                    'type' => 'text',
+                    'title' => 'Address',
+                ],
+                [
+                    'id' => 'phone',
+                    'type' => 'text',
+                    'title' => 'Phone',
+                ],
+                [
+                    'id' => 'hours',
+                    'type' => 'text',
+                    'title' => 'Hours',
+                ],
+                [
+                    'id' => 'website',
+                    'type' => 'text',
+                    'title' => 'Website',
+                ],
+            ]
+        ]
 
       ]
     ) );
