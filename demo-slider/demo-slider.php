@@ -35,7 +35,13 @@ function demoSlider_shortcode(){
 
     $query = new WP_Query($args);
 
-    $html = '<div class="demo-slider">';
+    $html = '
+    <script>
+      jQuery(document).ready(function($){
+      $(".demo-slider").slick()
+    });
+    </script>
+    <div class="demo-slider">';
 
     while($query->have_posts()) : $query->the_post();
     $html .= '<h2>'.get_the_title().'</h2>';
@@ -48,3 +54,13 @@ function demoSlider_shortcode(){
 }
 
 add_shortcode('demo_slider', 'demoSlider_shortcode');
+
+
+function demoSlider_plugin_assets() {
+    $plugin_dir_url = plugin_dir_url(__FILE__);
+
+    wp_enqueue_style('slick', $plugin_dir_url.'assets/css/slick.css'); 
+    wp_enqueue_script('slick', $plugin_dir_url.'assets/js/slick.min.js', ['jquery'], null, true);
+}
+
+add_action('wp_enqueue_scripts', 'demoSlider_plugin_assets');
