@@ -23,7 +23,7 @@ if ( ! class_exists( 'CSF_Options' ) ) {
     public $args         = array(
 
       // framework title
-      'framework_title'         => 'Codestar Framework <small>by Codestar</small>',
+      'framework_title'         => 'Geo Store Locator <small>by Tawsif Ahmed Riyad</small>',
       'framework_class'         => '',
 
       // menu settings
