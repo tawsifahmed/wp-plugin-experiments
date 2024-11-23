@@ -42,6 +42,10 @@ function ptu_contact_form_shortcode(){
         <label for="message" style="margin-top: 15px">Message</label>
         <textarea style="padding: 0 0 30px 0;" id="message" name="message" required></textarea>
 
+        <?php 
+        wp_nonce_field( 'ptu_contact_form_nonce' );
+        ?>
+
         <button type="submit" name="ptu_contact_form_submit" 
         style="text-decoration: none;
             background: crimson;
@@ -66,6 +70,11 @@ function ptu__contact_handle_submission() {
     if ( ! isset( $_POST['ptu_contact_form_submit'] ) ) {
         return;
     }
+
+    if( ! wp_verify_nonce( $_POST['_wpnonce'], 'ptu_contact_form_nonce' ) ) {
+        return;
+    }
+
     add_action('the_content', 'ptu_print_form_data');
 }
 
