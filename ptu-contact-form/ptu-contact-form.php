@@ -18,3 +18,12 @@
 if (!defined('ABSPATH')) {
     exit;
 }
+
+
+add_shortcode('ptu_contact_form', 'ptu_contact_form_shortcode');
+
+function ptu_contact_form_shortcode(){
+    ob_start();
+    echo '<div class="ptu-contact-form">Hello</div>';
+    return ob_get_clean();
+}
