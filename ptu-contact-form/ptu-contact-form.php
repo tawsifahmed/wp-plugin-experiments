@@ -79,11 +79,11 @@ function ptu__contact_handle_submission() {
 }
 
 function ptu_print_form_data( $content ) {
-    $first_name = sanitize_text_field( $_POST['first_name'] );
-    $last_name  = sanitize_text_field( $_POST['last_name'] );
-    $subject    = sanitize_text_field( $_POST['subject'] );
-    $email      = sanitize_email( $_POST['email'] );
-    $message    = sanitize_textarea_field( $_POST['message'] );
+    $first_name = isset( $_POST['first_name'] ) ? sanitize_text_field( $_POST['first_name'] ) : '';
+    $last_name  = isset( $_POST['last_name'] ) ? sanitize_text_field( $_POST['last_name'] ) : '';
+    $subject    = isset( $_POST['subject'] ) ? sanitize_text_field( $_POST['subject'] ) : '';
+    $email      = isset( $_POST['email'] ) ? sanitize_email( $_POST['email'] ) : '';
+    $message    = isset( $_POST['message'] ) ? sanitize_textarea_field( $_POST['message'] ) : '';
 
     $data = '<div class="ptu-contact-form" style="color: green; background: #F2FBF2DB;">';
     $data .= '<h2>Thank you for your message!</h2>';
