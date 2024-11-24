@@ -85,8 +85,25 @@ function ptu_print_form_data( $content ) {
     $email      = isset( $_POST['email'] ) ? sanitize_email( $_POST['email'] ) : '';
     $message    = isset( $_POST['message'] ) ? sanitize_textarea_field( $_POST['message'] ) : '';
 
+    $post_id = wp_insert_post( [
+        'post_title' => 'Form submission - ' . $subject,
+        'post_content' => $message,
+        'post_status' => 'publish',
+        'post_type' => 'ptu-form-entry',
+        'meta_input' => [
+            'first_name' => $first_name,
+            'last_name' => $last_name,
+            'email' => $email,
+        ],
+    ] );
+
     $data = '<div class="ptu-contact-form" style="color: green; background: #F2FBF2DB;">';
     $data .= '<h2>Thank you for your message!</h2>';
+
+    if( $post_id ){
+        $data .= '<p>Form entry saved successfully.</p>';
+    }
+    
     $data .= '<p><strong>First Name:</strong> ' . $first_name . '</p>';
     $data .= '<p><strong>Last Name:</strong> ' . $last_name . '</p>';
     $data .= '<p><strong>Subject:</strong> ' . $subject . '</p>';
