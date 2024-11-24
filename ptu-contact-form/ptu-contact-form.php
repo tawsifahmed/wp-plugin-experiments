@@ -103,7 +103,7 @@ function ptu_print_form_data( $content ) {
     if( $post_id ){
         $data .= '<p>Form entry saved successfully.</p>';
     }
-    
+
     $data .= '<p><strong>First Name:</strong> ' . $first_name . '</p>';
     $data .= '<p><strong>Last Name:</strong> ' . $last_name . '</p>';
     $data .= '<p><strong>Subject:</strong> ' . $subject . '</p>';
@@ -112,4 +112,20 @@ function ptu_print_form_data( $content ) {
     $data .= '</div>';
 
     return $data . $content;
+}
+
+add_action( 'init', 'ptu_contact_register_post_type' );
+
+function ptu_contact_register_post_type() {
+    // https://developer.wordpress.org/reference/functions/register_post_type/
+    register_post_type( 'ptu-form-entry', [
+        'labels' => [
+            'name' => 'PTU Contact Form Entries',
+            'singular_name' => 'PTU Contact Form Entry',
+        ],
+        'public' => false,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'supports' => [ 'title', 'editor', 'custom-fields' ],
+    ] );
 }
