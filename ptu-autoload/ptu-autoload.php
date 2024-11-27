@@ -10,9 +10,12 @@
 
 namespace PTUAutoLoadPlugin;
 
+require_once 'vendor/autoload.php';
+
 class PTU_AutoLoad_Plugin {
   public function __construct (){
-    return 0;
+    new Src\Hi("Ahmed"); 
+    new Inc\World("Bangladesh");
   }
 }
 
