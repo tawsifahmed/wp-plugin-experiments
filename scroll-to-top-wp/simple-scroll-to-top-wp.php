@@ -65,3 +65,19 @@ function scroll_to_top($wp_customize){
     ));
 }
 add_action("customize_register", "scroll_to_top");
+
+
+function scroll_theme_color_cus(){
+  ?>
+  <style>
+    #scrollUp {
+    background-color: <?php print get_theme_mod("scroll_default_color"); ?>;
+    border-radius: <?php print get_theme_mod("scroll_rounded_corner"); ?>;
+  }
+  </style>
+  <?php 
+}
+add_action('wp_head', 'scroll_theme_color_cus');
+
+
+?>
