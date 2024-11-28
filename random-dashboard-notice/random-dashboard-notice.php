@@ -37,5 +37,5 @@ function dynamic_wordpress_joke_notice() {
 	echo '<div class="notice notice-success is-dismissible">';
 	echo '<p>' . $content_array['joke'] . '</p>';
 	echo '</div>';
-    // shown in plugins page
+    // shown in admin page
 }
